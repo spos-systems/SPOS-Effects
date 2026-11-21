@@ -6,7 +6,6 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="url(#g)"/>
-  <g transform="translate(8.4,7.2) scale(2)">
-    <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" fill="#ffffff"/>
-  </g>
+  <text x="28" y="43" font-family="ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace" font-size="30" font-weight="700" font-style="italic" fill="#ffffff" text-anchor="middle">fx</text>
+  <path d="M52 10 L53.8 13.2 L57 15 L53.8 16.8 L52 20 L50.2 16.8 L47 15 L50.2 13.2 Z" fill="#bae6fd"/>
 </svg>

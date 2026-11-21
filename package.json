@@ -1,6 +1,6 @@
 {
   "name": "spos-effects",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "SPOS Effects — an open-source library of 30 hand-crafted pure-CSS effects with live demos and one-click copy. By SPOS Systems (صولة للأنظمة).",
   "repository": {
@@ -25,6 +25,7 @@
     "start": "NODE_ENV=production bun .next/standalone/server.js 2>&1 | tee server.log",
     "lint": "eslint .",
     "build:css": "bun run scripts/build-css.ts",
+    "build:meta": "bun run scripts/build-meta.ts",
     "db:push": "prisma db push --accept-data-loss",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",

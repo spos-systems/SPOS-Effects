@@ -1,0 +1,76 @@
+# SPOS Effects
+
+> Open-source library of 30 hand-crafted, pure-CSS effects — buttons, text animations, loaders, cards, backgrounds, and inputs — with live interactive demos and one-click copy. Zero JavaScript, zero dependencies, MIT licensed. By SPOS Systems (صولة للأنظمة), Libya.
+
+- Website / live demos: https://spos-systems.github.io/SPOS-Effects
+- GitHub repository: https://github.com/spos-systems/SPOS-Effects
+- Machine-readable catalog: https://spos-systems.github.io/SPOS-Effects/effects.json
+- Complete CSS in one file (this version): https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css
+- Download the compiled stylesheet: https://spos-systems.github.io/SPOS-Effects/spos-effects.css
+- License: MIT (free for personal and commercial use)
+- Contact: SPOS Systems — https://spos.ly · WhatsApp https://wa.me/218935535606 · +218 93 553 5606
+
+## How to use
+
+Add one stylesheet, then put an `fx-` class on any element. Every effect is fully self-contained and works with any framework (React, Vue, Svelte, Angular) or plain HTML:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css" />
+<button class="fx-btn-neon-glow">Get Started</button>
+```
+
+Each effect has its own shareable demo page — open any effect and copy its exact CSS and HTML from the code dialog, e.g. https://spos-systems.github.io/SPOS-Effects/?effect=btn-neon-glow
+
+## The effects (id · name · description · tags)
+
+## Buttons (Hover, press & border micro-interactions)
+
+- [btn-slide-fill] Slide Fill: A solid layer slides in from the left on hover while the label smoothly changes color, using a ::before pseudo-element and transform transitions. Tags: hover, pseudo-element, transition, minimal.
+- [btn-neon-glow] Neon Glow: A cyberpunk-style neon button. Text-shadow and layered box-shadows bloom into a bright blue halo on hover. Tags: hover, neon, glow, box-shadow, cyberpunk.
+- [btn-3d-push] 3D Push: A chunky retro arcade button with a hard shadow base. Pressing it (active state) sinks the button into its shadow for a physical 3D feel. Tags: 3d, active, box-shadow, tactile, retro.
+- [btn-border-runner] Border Runner: A comet of gradient light endlessly orbits the button border, built with a rotating conic-gradient pseudo-element clipped by overflow: hidden. Tags: conic-gradient, animation, border, premium.
+- [btn-arrow-swap] Arrow Swap: On hover the arrow icon slides out and a second one slides in from the right, while the button fills with color — a classic modern CTA micro-interaction. Tags: hover, icon, micro-interaction, cta.
+- [btn-ripple] Ripple Press: Material-style ripple that radiates from the center on every press, animated with the :active pseudo-class — no JavaScript required. Tags: ripple, active, material, animation.
+
+## Text Effects (Animated typography & headlines)
+
+- [text-gradient-flow] Gradient Flow: An animated multi-color gradient that flows endlessly through the letters, made with background-clip: text and a looping background-position animation. Tags: gradient, animation, background-clip, headline.
+- [text-typewriter] Typewriter: Types and deletes text in a loop using the steps() timing function on the width property, complete with a blinking caret on the border-right. Tags: typewriter, steps, animation, caret.
+- [text-highlight-sweep] Highlight Sweep: A highlighter marker sweeps across the text on hover by animating background-size from 0% to 100% — perfect for headings that reveal emphasis. Tags: hover, background-size, marker, transition.
+- [text-glitch] Glitch: Cyberpunk distortion: two colored copies of the text (via data-text attribute and pseudo-elements) jitter with randomized clip-path slices. Tags: glitch, clip-path, pseudo-element, cyberpunk.
+- [text-wave-letters] Wave Letters: Each letter rides a gentle wave with a staggered animation-delay, creating a rippling motion — no JavaScript, just per-letter spans. Tags: wave, stagger, animation-delay, playful.
+
+## Loaders (Spinners, progress & waiting states)
+
+- [loader-dual-ring] Dual Ring: Two counter-rotating rings built with asymmetric border colors and opposite spin animations — a timeless spinner for any waiting state. Tags: spinner, border, rotate, classic.
+- [loader-bouncing-dots] Bouncing Dots: Three playful dots bounce in sequence with staggered animation delays and a soft opacity breathing effect. Tags: dots, bounce, stagger, playful.
+- [loader-pulse-ring] Pulse Ring: Radar-style expanding rings emitted from a solid core. Two pseudo-elements share one keyframe with a one-second offset for a continuous sonar pulse. Tags: pulse, sonar, scale, ping.
+- [loader-stripe-bar] Stripe Progress Bar: An indeterminate progress bar: a striped block slides left-to-right with repeating-linear-gradient stripes scrolling inside it. Tags: progress, stripes, indeterminate, gradient.
+- [loader-orbit] Orbit: A glowing moon circles a planet along a rotating dashed orbit — pure CSS astronomy using nested pseudo-elements. Tags: orbit, planet, rotate, creative.
+
+## Cards (3D flips, lifts & spotlight surfaces)
+
+- [card-hover-lift] Hover Lift: The card floats up with a soft blue glow on hover. A spring-like cubic-bezier easing makes the motion feel physical. Tags: hover, lift, shadow, elevation.
+- [card-flip-3d] 3D Flip: A true 3D card flip on hover: preserve-3d keeps both faces in shared perspective while backface-visibility hides the far side. Tags: 3d, flip, perspective, backface-visibility.
+- [card-spotlight] Spotlight: Hovering reveals a radial spotlight that washes over the card. Tip: drive the position with a --fx-x/--fx-y custom property and two lines of JS to make it follow the cursor. Tags: hover, spotlight, radial-gradient, custom-property.
+- [card-image-zoom] Image Zoom Reveal: A cover image (here a pure-CSS sunset gradient) zooms gently while a caption slides up with a gradient scrim — a classic media card pattern. Tags: zoom, caption, scrim, media.
+- [card-gradient-border] Animated Gradient Border: A rotating conic-gradient ring glows around the card forever. The ring is an oversized pseudo-element clipped by overflow: hidden. Tags: gradient, border, conic-gradient, glow.
+
+## Backgrounds (Gradients, grids & ambient patterns)
+
+- [bg-gradient-shift] Shifting Gradient: A deep blue gradient that slowly drifts across an oversized background — calm, ambient, and perfect for hero sections. Tags: gradient, ambient, hero, animation.
+- [bg-futuristic-grid] Futuristic Grid: A synthwave grid built from two repeating gradients, softly faded at the edges with a radial mask — instantly sets a tech mood. Tags: grid, mask, synthwave, pattern.
+- [bg-dot-matrix] Drifting Dot Matrix: A dot-pattern background that gently drifts forever. Made with a single radial-gradient tile and an animated background-position. Tags: dots, pattern, drift, radial-gradient.
+- [bg-diagonal-stripes] Moving Diagonal Stripes: Amber diagonal candy stripes that scroll seamlessly. The background-position period (67.88px) matches the 45deg stripe wavelength exactly. Tags: stripes, diagonal, seamless, animation.
+- [bg-aurora] Aurora: Two blurred orbs of light float and morph like the northern lights — layered pseudo-elements with filter: blur and slow transforms. Tags: aurora, blur, ambient, glow.
+
+## Inputs (Fields with delightful focus states)
+
+- [input-underline-grow] Underline Grow: Focus the field and a two-tone gradient underline grows outward from the center — powered by :focus-within and a transform-happy pseudo-element. Tags: focus, underline, gradient, focus-within.
+- [input-floating-label] Floating Label: The label shrinks and floats to the top when the field is focused or filled. The trick: :not(:placeholder-shown) needs an empty placeholder to detect content. Tags: label, float, placeholder-shown, form.
+- [input-glow-focus] Glow Focus: On focus the field lifts slightly and lights up with a layered amber glow — a friendly, tactile way to show where the user is typing. Tags: focus, glow, box-shadow, lift.
+- [input-search-expand] Expanding Search: A circular icon that blooms into a full search field on focus. The wrapper animates its width while the magnifier glides to the right edge. Tags: search, expand, focus-within, icon.
+
+## About the authors
+
+SPOS Systems (صولة للأنظمة) is a Libyan software company building complete software solutions "from idea to launch" (حلول برمجية متكاملة — من الفكرة إلى الإطلاق): websites, e-commerce stores, administrative systems, and custom applications. Contact: https://spos.ly · WhatsApp: https://wa.me/218935535606 · Phone: +218 93 553 5606.

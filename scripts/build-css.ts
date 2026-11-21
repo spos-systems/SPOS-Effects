@@ -9,7 +9,7 @@ import { join } from "node:path";
 import { allEffects, effectCategories } from "../src/lib/effects";
 
 const BANNER = `/*!
- * SPOS Effects v1.0.0 — Open-source CSS effects library
+ * SPOS Effects v1.0.1 — Open-source CSS effects library
  * https://github.com/spos-systems/SPOS-Effects
  *
  * Crafted by SPOS Systems (صولة للأنظمة) — https://spos.ly

@@ -68,20 +68,34 @@ The companion demo site — built with Next.js 16, TypeScript, Tailwind CSS 4, s
 
 The fastest way to use SPOS Effects: one file, all 30 effects.
 
-1. Copy `spos-effects.css` from the repository root into your project.
-2. Include it in your page:
+Either reference it straight from the CDN (no download needed):
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css" />
+```
+
+…or copy `spos-effects.css` from the repository root into your project and include it:
 
 ```html
 <link rel="stylesheet" href="spos-effects.css" />
 ```
 
-3. Add an effect class to any element:
+Then add an effect class to any element:
 
 ```html
 <button class="fx-btn-neon-glow">Get Started</button>
 ```
 
-Each effect's exact HTML markup is shown in its code dialog on the demo — open the effect, click the code button, and copy both the CSS and the HTML straight into your project.
+Each effect's exact HTML markup is shown in its code dialog on the demo — open the effect, click the code button, and copy both the CSS and the HTML straight into your project. Every effect also has a shareable deep link, e.g. `https://spos-systems.github.io/SPOS-Effects/?effect=btn-neon-glow`, which opens that effect's code dialog directly.
+
+### AI-friendly by design
+
+The demo site ships machine-readable endpoints so search engines and AI agents can index the library accurately:
+
+- [`llms.txt`](https://spos-systems.github.io/SPOS-Effects/llms.txt) — curated overview of the library for LLMs
+- [`llms-full.txt`](https://spos-systems.github.io/SPOS-Effects/llms-full.txt) — full reference including every HTML snippet and the complete CSS
+- [`effects.json`](https://spos-systems.github.io/SPOS-Effects/effects.json) — machine-readable catalog (ids, categories, tags, demo links)
+- Structured data on every page: `Organization`, `WebSite`, `SoftwareApplication`, and `FAQPage` (JSON-LD)
 
 ### Option 2 — Run the demo site locally
 
@@ -109,6 +123,7 @@ In the static build the API routes are stripped out and the demo automatically s
 | `bun run dev` | Start the Next.js dev server at http://localhost:3000 |
 | `bun run lint` | Run ESLint |
 | `bun run build:css` | Regenerate the compiled `spos-effects.css` stylesheet |
+| `bun run build:meta` | Regenerate `effects.json`, `llms.txt`, `llms-full.txt` & `humans.txt` |
 | `bun run db:push` | Apply the Prisma schema to the SQLite database |
 
 ## Project Structure
@@ -185,22 +200,27 @@ SPOS Effects مكتبة مفتوحة المصدر من صولة للأنظمة (
 
 ### أولاً: استخدام المكتبة كاملة
 
-أسرع طريقة للاستفادة من المكتبة: ملف واحد يضم التأثيرات الثلاثين جميعها.
+أسرع طريقة للاستفادة من المكتبة: ملف واحد يضم التأثيرات الثلاثين جميعها — إما مباشرة من الـ CDN:
 
-1. انسخ ملف spos-effects.css من جذر المستودع إلى مشروعك.
-2. اربط الملف في صفحتك:
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css" />
+```
+
+أو بنسخ ملف spos-effects.css من جذر المستودع إلى مشروعك وربطه في صفحتك:
 
 ```html
 <link rel="stylesheet" href="spos-effects.css" />
 ```
 
-3. أضف صنف التأثير إلى أي عنصر:
+ثم أضف صنف التأثير إلى أي عنصر:
 
 ```html
 <button class="fx-btn-neon-glow">ابدأ الآن</button>
 ```
 
-يعرض موقع العرض كود HTML الدقيق لكل تأثير داخل نافذة الكود الخاصة به — افتح التأثير، واضغط زر الكود، وانسخ CSS وHTML مباشرة إلى مشروعك.
+يعرض موقع العرض كود HTML الدقيق لكل تأثير داخل نافذة الكود الخاصة به — افتح التأثير، واضغط زر الكود، وانسخ CSS وHTML مباشرة إلى مشروعك. لكل تأثير أيضاً رابط مشاركة مباشر مثل `?effect=btn-neon-glow` يفتح نافذة الكود مباشرة.
+
+كما يوفر الموقع نقاط نهاية صديقة للذكاء الاصطناعي: `llms.txt` و`llms-full.txt` و`effects.json` لفهرسة المكتبة بدقة من محركات البحث ووكلاء الذكاء الاصطناعي.
 
 ### ثانياً: تشغيل موقع العرض محلياً
 

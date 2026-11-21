@@ -1,0 +1,14 @@
+/* TEAM */
+
+	SPOS Systems — صولة للأنظمة
+	Complete software solutions, from idea to launch
+	Website: https://spos.ly
+	WhatsApp: https://wa.me/218935535606
+	Phone: +218 93 553 5606
+	GitHub: https://github.com/spos-systems
+
+/* SITE */
+
+	Language: English + Arabic
+	Stack: Next.js, TypeScript, Tailwind CSS, shadcn/ui, Prisma
+	Effects: 100% pure CSS — zero JavaScript

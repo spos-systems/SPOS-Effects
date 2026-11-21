@@ -1,0 +1,474 @@
+{
+  "name": "SPOS Effects",
+  "version": "1.0.1",
+  "description": "Open-source library of 30 hand-crafted, pure-CSS effects with live demos and one-click copy. Zero JavaScript, zero dependencies. By SPOS Systems (صولة للأنظمة).",
+  "website": "https://spos-systems.github.io/SPOS-Effects",
+  "repository": "https://github.com/spos-systems/SPOS-Effects",
+  "license": "MIT",
+  "installation": {
+    "cssFile": "https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css",
+    "download": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+  },
+  "author": {
+    "name": "SPOS Systems (صولة للأنظمة)",
+    "website": "https://spos.ly",
+    "phone": "+218-93-553-5606",
+    "whatsapp": "https://wa.me/218935535606"
+  },
+  "categories": [
+    {
+      "id": "buttons",
+      "label": "Buttons",
+      "description": "Hover, press & border micro-interactions"
+    },
+    {
+      "id": "text",
+      "label": "Text Effects",
+      "description": "Animated typography & headlines"
+    },
+    {
+      "id": "loaders",
+      "label": "Loaders",
+      "description": "Spinners, progress & waiting states"
+    },
+    {
+      "id": "cards",
+      "label": "Cards",
+      "description": "3D flips, lifts & spotlight surfaces"
+    },
+    {
+      "id": "backgrounds",
+      "label": "Backgrounds",
+      "description": "Gradients, grids & ambient patterns"
+    },
+    {
+      "id": "inputs",
+      "label": "Inputs",
+      "description": "Fields with delightful focus states"
+    }
+  ],
+  "effects": [
+    {
+      "id": "btn-slide-fill",
+      "name": "Slide Fill",
+      "category": "buttons",
+      "description": "A solid layer slides in from the left on hover while the label smoothly changes color, using a ::before pseudo-element and transform transitions.",
+      "tags": [
+        "hover",
+        "pseudo-element",
+        "transition",
+        "minimal"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=btn-slide-fill",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "btn-neon-glow",
+      "name": "Neon Glow",
+      "category": "buttons",
+      "description": "A cyberpunk-style neon button. Text-shadow and layered box-shadows bloom into a bright blue halo on hover.",
+      "tags": [
+        "hover",
+        "neon",
+        "glow",
+        "box-shadow",
+        "cyberpunk"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=btn-neon-glow",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "btn-3d-push",
+      "name": "3D Push",
+      "category": "buttons",
+      "description": "A chunky retro arcade button with a hard shadow base. Pressing it (active state) sinks the button into its shadow for a physical 3D feel.",
+      "tags": [
+        "3d",
+        "active",
+        "box-shadow",
+        "tactile",
+        "retro"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=btn-3d-push",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "btn-border-runner",
+      "name": "Border Runner",
+      "category": "buttons",
+      "description": "A comet of gradient light endlessly orbits the button border, built with a rotating conic-gradient pseudo-element clipped by overflow: hidden.",
+      "tags": [
+        "conic-gradient",
+        "animation",
+        "border",
+        "premium"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=btn-border-runner",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "btn-arrow-swap",
+      "name": "Arrow Swap",
+      "category": "buttons",
+      "description": "On hover the arrow icon slides out and a second one slides in from the right, while the button fills with color — a classic modern CTA micro-interaction.",
+      "tags": [
+        "hover",
+        "icon",
+        "micro-interaction",
+        "cta"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=btn-arrow-swap",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "btn-ripple",
+      "name": "Ripple Press",
+      "category": "buttons",
+      "description": "Material-style ripple that radiates from the center on every press, animated with the :active pseudo-class — no JavaScript required.",
+      "tags": [
+        "ripple",
+        "active",
+        "material",
+        "animation"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=btn-ripple",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "text-gradient-flow",
+      "name": "Gradient Flow",
+      "category": "text",
+      "description": "An animated multi-color gradient that flows endlessly through the letters, made with background-clip: text and a looping background-position animation.",
+      "tags": [
+        "gradient",
+        "animation",
+        "background-clip",
+        "headline"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=text-gradient-flow",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "text-typewriter",
+      "name": "Typewriter",
+      "category": "text",
+      "description": "Types and deletes text in a loop using the steps() timing function on the width property, complete with a blinking caret on the border-right.",
+      "tags": [
+        "typewriter",
+        "steps",
+        "animation",
+        "caret"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=text-typewriter",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "text-highlight-sweep",
+      "name": "Highlight Sweep",
+      "category": "text",
+      "description": "A highlighter marker sweeps across the text on hover by animating background-size from 0% to 100% — perfect for headings that reveal emphasis.",
+      "tags": [
+        "hover",
+        "background-size",
+        "marker",
+        "transition"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=text-highlight-sweep",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "text-glitch",
+      "name": "Glitch",
+      "category": "text",
+      "description": "Cyberpunk distortion: two colored copies of the text (via data-text attribute and pseudo-elements) jitter with randomized clip-path slices.",
+      "tags": [
+        "glitch",
+        "clip-path",
+        "pseudo-element",
+        "cyberpunk"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=text-glitch",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "text-wave-letters",
+      "name": "Wave Letters",
+      "category": "text",
+      "description": "Each letter rides a gentle wave with a staggered animation-delay, creating a rippling motion — no JavaScript, just per-letter spans.",
+      "tags": [
+        "wave",
+        "stagger",
+        "animation-delay",
+        "playful"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=text-wave-letters",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "loader-dual-ring",
+      "name": "Dual Ring",
+      "category": "loaders",
+      "description": "Two counter-rotating rings built with asymmetric border colors and opposite spin animations — a timeless spinner for any waiting state.",
+      "tags": [
+        "spinner",
+        "border",
+        "rotate",
+        "classic"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=loader-dual-ring",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "loader-bouncing-dots",
+      "name": "Bouncing Dots",
+      "category": "loaders",
+      "description": "Three playful dots bounce in sequence with staggered animation delays and a soft opacity breathing effect.",
+      "tags": [
+        "dots",
+        "bounce",
+        "stagger",
+        "playful"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=loader-bouncing-dots",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "loader-pulse-ring",
+      "name": "Pulse Ring",
+      "category": "loaders",
+      "description": "Radar-style expanding rings emitted from a solid core. Two pseudo-elements share one keyframe with a one-second offset for a continuous sonar pulse.",
+      "tags": [
+        "pulse",
+        "sonar",
+        "scale",
+        "ping"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=loader-pulse-ring",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "loader-stripe-bar",
+      "name": "Stripe Progress Bar",
+      "category": "loaders",
+      "description": "An indeterminate progress bar: a striped block slides left-to-right with repeating-linear-gradient stripes scrolling inside it.",
+      "tags": [
+        "progress",
+        "stripes",
+        "indeterminate",
+        "gradient"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=loader-stripe-bar",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "loader-orbit",
+      "name": "Orbit",
+      "category": "loaders",
+      "description": "A glowing moon circles a planet along a rotating dashed orbit — pure CSS astronomy using nested pseudo-elements.",
+      "tags": [
+        "orbit",
+        "planet",
+        "rotate",
+        "creative"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=loader-orbit",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "card-hover-lift",
+      "name": "Hover Lift",
+      "category": "cards",
+      "description": "The card floats up with a soft blue glow on hover. A spring-like cubic-bezier easing makes the motion feel physical.",
+      "tags": [
+        "hover",
+        "lift",
+        "shadow",
+        "elevation"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=card-hover-lift",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "card-flip-3d",
+      "name": "3D Flip",
+      "category": "cards",
+      "description": "A true 3D card flip on hover: preserve-3d keeps both faces in shared perspective while backface-visibility hides the far side.",
+      "tags": [
+        "3d",
+        "flip",
+        "perspective",
+        "backface-visibility"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=card-flip-3d",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "card-spotlight",
+      "name": "Spotlight",
+      "category": "cards",
+      "description": "Hovering reveals a radial spotlight that washes over the card. Tip: drive the position with a --fx-x/--fx-y custom property and two lines of JS to make it follow the cursor.",
+      "tags": [
+        "hover",
+        "spotlight",
+        "radial-gradient",
+        "custom-property"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=card-spotlight",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "card-image-zoom",
+      "name": "Image Zoom Reveal",
+      "category": "cards",
+      "description": "A cover image (here a pure-CSS sunset gradient) zooms gently while a caption slides up with a gradient scrim — a classic media card pattern.",
+      "tags": [
+        "zoom",
+        "caption",
+        "scrim",
+        "media"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=card-image-zoom",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "card-gradient-border",
+      "name": "Animated Gradient Border",
+      "category": "cards",
+      "description": "A rotating conic-gradient ring glows around the card forever. The ring is an oversized pseudo-element clipped by overflow: hidden.",
+      "tags": [
+        "gradient",
+        "border",
+        "conic-gradient",
+        "glow"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=card-gradient-border",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "bg-gradient-shift",
+      "name": "Shifting Gradient",
+      "category": "backgrounds",
+      "description": "A deep blue gradient that slowly drifts across an oversized background — calm, ambient, and perfect for hero sections.",
+      "tags": [
+        "gradient",
+        "ambient",
+        "hero",
+        "animation"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=bg-gradient-shift",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "bg-futuristic-grid",
+      "name": "Futuristic Grid",
+      "category": "backgrounds",
+      "description": "A synthwave grid built from two repeating gradients, softly faded at the edges with a radial mask — instantly sets a tech mood.",
+      "tags": [
+        "grid",
+        "mask",
+        "synthwave",
+        "pattern"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=bg-futuristic-grid",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "bg-dot-matrix",
+      "name": "Drifting Dot Matrix",
+      "category": "backgrounds",
+      "description": "A dot-pattern background that gently drifts forever. Made with a single radial-gradient tile and an animated background-position.",
+      "tags": [
+        "dots",
+        "pattern",
+        "drift",
+        "radial-gradient"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=bg-dot-matrix",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "bg-diagonal-stripes",
+      "name": "Moving Diagonal Stripes",
+      "category": "backgrounds",
+      "description": "Amber diagonal candy stripes that scroll seamlessly. The background-position period (67.88px) matches the 45deg stripe wavelength exactly.",
+      "tags": [
+        "stripes",
+        "diagonal",
+        "seamless",
+        "animation"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=bg-diagonal-stripes",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "bg-aurora",
+      "name": "Aurora",
+      "category": "backgrounds",
+      "description": "Two blurred orbs of light float and morph like the northern lights — layered pseudo-elements with filter: blur and slow transforms.",
+      "tags": [
+        "aurora",
+        "blur",
+        "ambient",
+        "glow"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=bg-aurora",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "input-underline-grow",
+      "name": "Underline Grow",
+      "category": "inputs",
+      "description": "Focus the field and a two-tone gradient underline grows outward from the center — powered by :focus-within and a transform-happy pseudo-element.",
+      "tags": [
+        "focus",
+        "underline",
+        "gradient",
+        "focus-within"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=input-underline-grow",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "input-floating-label",
+      "name": "Floating Label",
+      "category": "inputs",
+      "description": "The label shrinks and floats to the top when the field is focused or filled. The trick: :not(:placeholder-shown) needs an empty placeholder to detect content.",
+      "tags": [
+        "label",
+        "float",
+        "placeholder-shown",
+        "form"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=input-floating-label",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "input-glow-focus",
+      "name": "Glow Focus",
+      "category": "inputs",
+      "description": "On focus the field lifts slightly and lights up with a layered amber glow — a friendly, tactile way to show where the user is typing.",
+      "tags": [
+        "focus",
+        "glow",
+        "box-shadow",
+        "lift"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=input-glow-focus",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    },
+    {
+      "id": "input-search-expand",
+      "name": "Expanding Search",
+      "category": "inputs",
+      "description": "A circular icon that blooms into a full search field on focus. The wrapper animates its width while the magnifier glides to the right edge.",
+      "tags": [
+        "search",
+        "expand",
+        "focus-within",
+        "icon"
+      ],
+      "demo": "https://spos-systems.github.io/SPOS-Effects/?effect=input-search-expand",
+      "css": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
+    }
+  ]
+}

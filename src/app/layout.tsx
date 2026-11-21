@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
@@ -20,10 +20,17 @@ const SITE_URL = (
 ).replace(/\/+$/, "");
 
 const SITE_NAME = "SPOS Effects";
+const VERSION = "1.0.1";
+const CDN_URL = `https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v${VERSION}/spos-effects.css`;
 const TITLE =
   "SPOS Effects — مكتبة تأثيرات CSS مفتوحة المصدر | Open-Source CSS Effects Library";
 const DESCRIPTION =
   "مكتبة تأثيرات CSS مفتوحة المصدر من صولة للأنظمة — 30 تأثيراً جاهزاً للأزرار والنصوص ومؤشرات التحميل والبطاقات والخلفيات وحقول الإدخال، مع معاينة حية ونسخ بنقرة واحدة. An open-source library of 30 hand-crafted, pure-CSS effects with live demos and one-click copy — zero JavaScript, by SPOS Systems (spos.ly).";
+
+export const viewport: Viewport = {
+  themeColor: "#09090b",
+  colorScheme: "dark",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -154,13 +161,59 @@ const jsonLd: Record<string, unknown> = {
       applicationSubCategory: "CSS Effects Library",
       operatingSystem: "Any",
       programmingLanguage: "CSS",
-      softwareVersion: "1.0.0",
+      softwareVersion: VERSION,
       isAccessibleForFree: true,
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       author: { "@id": "https://spos.ly/#organization" },
       screenshot: `${SITE_URL}/og-image.png`,
       description:
         "30 hand-crafted, 100% dependency-free, pure-CSS effects — buttons, text, loaders, cards, backgrounds and inputs — with live demos and one-click copy.",
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is SPOS Effects? · ما هي مكتبة SPOS Effects؟",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: `SPOS Effects is an open-source library of 30 hand-crafted, 100% pure-CSS effects — buttons, text animations, loaders, cards, backgrounds, and inputs — with live demos and one-click copy. Every class is prefixed with fx- and the whole library ships as a single stylesheet (${CDN_URL}). مكتبة مفتوحة المصدر تضم 30 تأثير CSS جاهزاً مع معاينة حية ونسخ بنقرة واحدة، من صولة للأنظمة.`,
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do I use the effects in my project? · كيف أستخدم التأثيرات في مشروعي؟",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: `Add one stylesheet to your page — <link rel="stylesheet" href="${CDN_URL}"> — or download spos-effects.css from the site, then add an fx- class to any element, e.g. <button class="fx-btn-neon-glow">. Works with any framework or plain HTML. أضف ملف واحد فقط ثم استخدم صنف fx- على أي عنصر — يعمل مع أي إطار عمل أو HTML خالص.`,
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does it require JavaScript? · هل يحتاج إلى JavaScript؟",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. The effects themselves are 100% pure CSS with zero JavaScript and zero dependencies. The companion demo site is a Next.js app, but what you copy into your project is pure CSS. التأثيرات نفسها CSS خالص تماماً بدون أي JavaScript — موقع العرض فقط مبني بـ Next.js.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is it free? · هل هي مجانية؟",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. SPOS Effects is released under the MIT License — free for personal and commercial projects, no attribution required. مجانية بالكامل بموجب رخصة MIT للاستخدام الشخصي والتجاري.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who is behind SPOS Effects? · من طوّر المكتبة؟",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "SPOS Effects is crafted by SPOS Systems (صولة للأنظمة), a Libyan software company building complete solutions from idea to launch — websites, e-commerce, administrative systems, and custom apps. Contact: https://spos.ly · WhatsApp: https://wa.me/218935535606 · Phone: +218 93 553 5606. طوّرتها صولة للأنظمة، شركة ليبية للحلول البرمجية المتكاملة من الفكرة إلى الإطلاق.",
+          },
+        },
+      ],
     },
   ],
 };

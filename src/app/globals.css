@@ -122,6 +122,15 @@
 }
 
 /* ---- SPOS Effects custom scrollbar ---- */
+
+/* Respect users who prefer reduced motion (entrance animations only —
+   the effect demos themselves are the product, so they stay live). */
+@media (prefers-reduced-motion: reduce) {
+  .animate-in {
+    animation: none !important;
+  }
+}
+
 .fx-scroll {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.14) transparent;

@@ -27,7 +27,7 @@ jobs:
         run: bun run lint
 
   verify-css:
-    name: Verify compiled stylesheet
+    name: Verify generated artifacts
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -39,8 +39,12 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Build spos-effects.css
-        run: bun run build:css
+      - name: Build spos-effects.css + AI metadata files
+        run: |
+          bun run build:css
+          bun run build:meta
 
-      - name: Ensure spos-effects.css is up to date
-        run: git diff --exit-code spos-effects.css
+      - name: Ensure generated files are up to date
+        run: |
+          git diff --exit-code spos-effects.css
+          git diff --exit-code public/effects.json public/llms.txt public/llms-full.txt public/humans.txt public/spos-effects.css

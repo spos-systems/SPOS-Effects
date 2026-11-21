@@ -2,7 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Code2, Copy, Eye, Heart } from "lucide-react";
+import { Code2, Copy, Eye, Heart, Share2 } from "lucide-react";
 import type { CssEffect } from "@/lib/effects";
 import { cn } from "@/lib/utils";
 import { EffectPreview } from "./effect-preview";
@@ -15,6 +15,7 @@ interface EffectCardProps {
   onToggleFavorite: (effectId: string) => void;
   onOpenCode: (effect: CssEffect) => void;
   onCopyCss: (effect: CssEffect) => void;
+  onShare: (effect: CssEffect) => void;
 }
 
 export function EffectCard({
@@ -25,10 +26,12 @@ export function EffectCard({
   onToggleFavorite,
   onOpenCode,
   onCopyCss,
+  onShare,
 }: EffectCardProps) {
   return (
     <article
-      className="group flex animate-in fade-in slide-in-from-bottom-4 duration-500 flex-col overflow-hidden rounded-xl border border-zinc-800/80 bg-zinc-900/50 transition-colors duration-300 hover:border-blue-500/30"
+      id={`fx-${effect.id}`}
+      className="group flex animate-in fade-in slide-in-from-bottom-4 duration-500 flex-col overflow-hidden rounded-xl border border-zinc-800/80 bg-zinc-900/50 scroll-mt-24 transition-colors duration-300 hover:border-blue-500/30"
       style={{ animationDelay: `${Math.min(index, 12) * 50}ms`, animationFillMode: "backwards" }}
     >
       <EffectPreview effect={effect} />
@@ -43,20 +46,31 @@ export function EffectCard({
               {effect.description}
             </p>
           </div>
-          <button
-            type="button"
-            onClick={() => onToggleFavorite(effect.id)}
-            aria-label={favorited ? "Remove from favorites" : "Add to favorites"}
-            aria-pressed={favorited}
-            className="shrink-0 rounded-md p-1.5 text-zinc-500 transition-colors hover:bg-zinc-800 hover:text-rose-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
-          >
-            <Heart
-              className={cn(
-                "size-[1.05rem] transition-all duration-300",
-                favorited ? "scale-110 fill-rose-500 text-rose-500" : "group-hover:text-zinc-300"
-              )}
-            />
-          </button>
+          <div className="flex items-center gap-1">
+            <button
+              type="button"
+              onClick={() => onShare(effect)}
+              aria-label={`Share ${effect.name} link`}
+              title="Copy shareable link"
+              className="shrink-0 rounded-md p-1.5 text-zinc-500 transition-colors hover:bg-zinc-800 hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+            >
+              <Share2 className="size-[1.05rem]" aria-hidden />
+            </button>
+            <button
+              type="button"
+              onClick={() => onToggleFavorite(effect.id)}
+              aria-label={favorited ? "Remove from favorites" : "Add to favorites"}
+              aria-pressed={favorited}
+              className="shrink-0 rounded-md p-1.5 text-zinc-500 transition-colors hover:bg-zinc-800 hover:text-rose-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+            >
+              <Heart
+                className={cn(
+                  "size-[1.05rem] transition-all duration-300",
+                  favorited ? "scale-110 fill-rose-500 text-rose-500" : "group-hover:text-zinc-300"
+                )}
+              />
+            </button>
+          </div>
         </div>
 
         <div className="mt-3 flex flex-wrap gap-1.5">
