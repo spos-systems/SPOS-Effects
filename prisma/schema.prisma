@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  authorId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Saved (favorited) CSS effects
+model Favorite {
+  id        String   @id @default(cuid())
+  effectId  String   @unique
+  createdAt DateTime @default(now())
+}
+
+// View counter for each CSS effect
+model EffectStat {
+  id       String   @id @default(cuid())
+  effectId String   @unique
+  views    Int      @default(0)
+  updatedAt DateTime @updatedAt
+}
