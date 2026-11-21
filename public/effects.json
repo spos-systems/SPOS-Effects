@@ -1,12 +1,12 @@
 {
   "name": "SPOS Effects",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Open-source library of 30 hand-crafted, pure-CSS effects with live demos and one-click copy. Zero JavaScript, zero dependencies. By SPOS Systems (صولة للأنظمة).",
   "website": "https://spos-systems.github.io/SPOS-Effects",
   "repository": "https://github.com/spos-systems/SPOS-Effects",
   "license": "MIT",
   "installation": {
-    "cssFile": "https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css",
+    "cssFile": "https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.2/spos-effects.css",
     "download": "https://spos-systems.github.io/SPOS-Effects/spos-effects.css"
   },
   "author": {

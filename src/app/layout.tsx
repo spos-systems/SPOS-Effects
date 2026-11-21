@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -13,6 +13,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+/**
+ * Arabic typeface — Geist ships Latin glyphs only, so every Arabic glyph
+ * falls through the body font stack to IBM Plex Sans Arabic (per-glyph
+ * fallback: Latin renders in Geist, Arabic in Plex Arabic).
+ */
+const plexArabic = IBM_Plex_Sans_Arabic({
+  variable: "--font-arabic",
+  weight: ["400", "500", "600", "700"],
+  subsets: ["arabic", "latin"],
+  display: "swap",
+});
+
 /** Public URL of the deployed site (the GitHub Pages build by default). */
 const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -20,7 +32,7 @@ const SITE_URL = (
 ).replace(/\/+$/, "");
 
 const SITE_NAME = "SPOS Effects";
-const VERSION = "1.0.1";
+const VERSION = "1.0.2";
 const CDN_URL = `https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v${VERSION}/spos-effects.css`;
 const TITLE =
   "SPOS Effects — مكتبة تأثيرات CSS مفتوحة المصدر | Open-Source CSS Effects Library";
@@ -224,10 +236,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
-      >
+    <html
+      lang="en"
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${plexArabic.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="antialiased bg-background text-foreground">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

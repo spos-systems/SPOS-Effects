@@ -5,7 +5,7 @@
 - Website: https://spos-systems.github.io/SPOS-Effects
 - Repository: https://github.com/spos-systems/SPOS-Effects
 - Catalog: https://spos-systems.github.io/SPOS-Effects/effects.json
-- One-file CSS: https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css
+- One-file CSS: https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.2/spos-effects.css
 
 ## Effect reference (HTML snippets)
 
@@ -1535,6 +1535,6 @@ HTML:
 ## Usage
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.2/spos-effects.css" />
 <button class="fx-btn-slide-fill">Hover Me</button>
 ```

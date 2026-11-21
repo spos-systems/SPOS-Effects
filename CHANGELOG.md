@@ -4,6 +4,13 @@ All notable changes to the SPOS Effects project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-11-21
+
+### Changed
+
+- Typography: Arabic copy now renders in **IBM Plex Sans Arabic**. The Latin typeface (Geist) has no Arabic glyphs at all, so Arabic text previously fell back to whatever system font each visitor's device happened to pick — now it uses one consistent, professional Arabic typeface everywhere, via per-glyph fallback (Latin stays Geist, Arabic renders in Plex Arabic).
+- Brand mark: the "fx" monogram is now drawn as **vector strokes** instead of live text — both in the favicon/icon and in the header & footer marks — so it renders identically in every browser, every favicon context, and on third-party sites, with zero font-substitution risk. The README banner got the same treatment, replacing the old lightning bolt.
+
 ## [1.0.1] - 2026-11-21
 
 ### Added

@@ -49,7 +49,7 @@ import { CodeDialog } from "./code-dialog";
 
 /** One-file CDN link — the fastest way to grab the whole library. */
 const CDN_URL =
-  "https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css";
+  "https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.2/spos-effects.css";
 
 type CategoryFilter = "all" | EffectCategoryId;
 
@@ -283,9 +283,7 @@ export function EffectLibrary() {
               className="grid size-9 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-sky-400 to-blue-600 shadow-lg shadow-blue-500/30"
               aria-hidden
             >
-              <span className="font-mono text-[15px] font-bold italic tracking-tighter text-white">
-                fx
-              </span>
+              <FxMark className="h-[21px] w-auto" />
             </span>
             <div className="leading-tight">
               <h1 className="text-[1.05rem] font-bold tracking-tight">
@@ -741,8 +739,8 @@ export function EffectLibrary() {
             />
             <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
               <div className="max-w-xl">
-                <Badge className="mb-3 bg-blue-400/15 text-[11px] font-medium text-blue-300 hover:bg-blue-400/15">
-                  <Sparkles className="mr-1 size-3" aria-hidden />
+                <Badge dir="rtl" className="mb-3 bg-blue-400/15 text-[11px] font-medium text-blue-300 hover:bg-blue-400/15">
+                  <Sparkles className="ml-1 mr-0 size-3" aria-hidden />
                   تطوير · تصميم · حلول برمجية
                 </Badge>
                 <h2
@@ -804,9 +802,7 @@ export function EffectLibrary() {
                   className="grid size-8 place-items-center rounded-lg bg-gradient-to-br from-sky-400 to-blue-600"
                   aria-hidden
                 >
-                  <span className="font-mono text-[13px] font-bold italic tracking-tighter text-white">
-                    fx
-                  </span>
+                  <FxMark className="h-[17px] w-auto" />
                 </span>
                 <p className="text-sm font-bold text-zinc-100">
                   SPOS <span className="text-blue-400">Effects</span>
@@ -875,7 +871,7 @@ export function EffectLibrary() {
                 {allEffects.length} effects · {effectCategories.length} categories ·{" "}
                 {allEffects.reduce((n, e) => n + e.tags.length, 0)} tags
               </p>
-              <p>MIT License · v1.0.1</p>
+              <p>MIT License · v1.0.2</p>
             </div>
           </div>
           <div className="mt-6 border-t border-zinc-800/70 pt-4 text-center text-[11px] text-zinc-600">
@@ -892,6 +888,32 @@ export function EffectLibrary() {
         onCopy={handleCopy}
       />
     </div>
+  );
+}
+
+/**
+ * The "fx" monogram — the exact same vector letterforms as the favicon
+ * (src/app/icon.svg), so the brand mark renders identically everywhere
+ * with zero font dependency.
+ */
+function FxMark({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="10 16 46 35"
+      className={className}
+      fill="none"
+      stroke="#ffffff"
+      strokeWidth="5.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M21 22 H25.5 A6.5 6.5 0 0 1 32 28.5" />
+      <path d="M21 22 L17.5 47" />
+      <path d="M14 32.5 H27.5" />
+      <path d="M37.5 22 L48 47" />
+      <path d="M51.5 22 L34 47" />
+    </svg>
   );
 }
 

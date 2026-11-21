@@ -71,7 +71,7 @@ The fastest way to use SPOS Effects: one file, all 30 effects.
 Either reference it straight from the CDN (no download needed):
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.2/spos-effects.css" />
 ```
 
 …or copy `spos-effects.css` from the repository root into your project and include it:
@@ -203,7 +203,7 @@ SPOS Effects مكتبة مفتوحة المصدر من صولة للأنظمة (
 أسرع طريقة للاستفادة من المكتبة: ملف واحد يضم التأثيرات الثلاثين جميعها — إما مباشرة من الـ CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.2/spos-effects.css" />
 ```
 
 أو بنسخ ملف spos-effects.css من جذر المستودع إلى مشروعك وربطه في صفحتك:

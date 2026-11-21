@@ -5,7 +5,7 @@
 - Website / live demos: https://spos-systems.github.io/SPOS-Effects
 - GitHub repository: https://github.com/spos-systems/SPOS-Effects
 - Machine-readable catalog: https://spos-systems.github.io/SPOS-Effects/effects.json
-- Complete CSS in one file (this version): https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css
+- Complete CSS in one file (this version): https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.2/spos-effects.css
 - Download the compiled stylesheet: https://spos-systems.github.io/SPOS-Effects/spos-effects.css
 - License: MIT (free for personal and commercial use)
 - Contact: SPOS Systems — https://spos.ly · WhatsApp https://wa.me/218935535606 · +218 93 553 5606
@@ -15,7 +15,7 @@
 Add one stylesheet, then put an `fx-` class on any element. Every effect is fully self-contained and works with any framework (React, Vue, Svelte, Angular) or plain HTML:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.1/spos-effects.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v1.0.2/spos-effects.css" />
 <button class="fx-btn-neon-glow">Get Started</button>
 ```
 

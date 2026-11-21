@@ -14,7 +14,7 @@ import { copyFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { allEffects, allEffectsCss, effectCategories } from "../src/lib/effects";
 
-const VERSION = "1.0.1";
+const VERSION = "1.0.2";
 const SITE = "https://spos-systems.github.io/SPOS-Effects";
 const REPO = "https://github.com/spos-systems/SPOS-Effects";
 const CDN = `https://cdn.jsdelivr.net/gh/spos-systems/SPOS-Effects@v${VERSION}/spos-effects.css`;
@@ -163,18 +163,18 @@ writeFileSync(join(root, "public", "llms-full.txt"), llmsFullTxt, "utf8");
 
 const humansTxt = `/* TEAM */
 
-	SPOS Systems — صولة للأنظمة
-	Complete software solutions, from idea to launch
-	Website: https://spos.ly
-	WhatsApp: https://wa.me/218935535606
-	Phone: +218 93 553 5606
-	GitHub: https://github.com/spos-systems
+        SPOS Systems — صولة للأنظمة
+        Complete software solutions, from idea to launch
+        Website: https://spos.ly
+        WhatsApp: https://wa.me/218935535606
+        Phone: +218 93 553 5606
+        GitHub: https://github.com/spos-systems
 
 /* SITE */
 
-	Language: English + Arabic
-	Stack: Next.js, TypeScript, Tailwind CSS, shadcn/ui, Prisma
-	Effects: 100% pure CSS — zero JavaScript
+        Language: English + Arabic
+        Stack: Next.js, TypeScript, Tailwind CSS, shadcn/ui, Prisma
+        Effects: 100% pure CSS — zero JavaScript
 `;
 
 writeFileSync(join(root, "public", "humans.txt"), humansTxt, "utf8");

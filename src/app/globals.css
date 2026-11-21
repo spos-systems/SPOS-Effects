@@ -118,6 +118,10 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Latin renders in Geist; Arabic glyphs fall through (per glyph) to
+       IBM Plex Sans Arabic — Geist has no Arabic glyphs at all. */
+    font-family: var(--font-geist-sans), var(--font-arabic), ui-sans-serif,
+      system-ui, sans-serif;
   }
 }
 
