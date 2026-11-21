@@ -13,40 +13,156 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+/** Public URL of the deployed site (the GitHub Pages build by default). */
+const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://spos-systems.github.io/SPOS-Effects"
+).replace(/\/+$/, "");
+
+const SITE_NAME = "SPOS Effects";
+const TITLE =
+  "SPOS Effects — مكتبة تأثيرات CSS مفتوحة المصدر | Open-Source CSS Effects Library";
+const DESCRIPTION =
+  "مكتبة تأثيرات CSS مفتوحة المصدر من صولة للأنظمة — 30 تأثيراً جاهزاً للأزرار والنصوص ومؤشرات التحميل والبطاقات والخلفيات وحقول الإدخال، مع معاينة حية ونسخ بنقرة واحدة. An open-source library of 30 hand-crafted, pure-CSS effects with live demos and one-click copy — zero JavaScript, by SPOS Systems (spos.ly).";
+
 export const metadata: Metadata = {
-  title: "SPOS Effects — مكتبة تأثيرات CSS مفتوحة المصدر",
-  description:
-    "SPOS Effects: an open-source library of 30 hand-crafted pure-CSS effects — buttons, loaders, text, cards, backgrounds and inputs — with live demos and one-click copy. مكتبة تأثيرات CSS متكاملة من صولة للأنظمة.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  applicationName: SITE_NAME,
+  category: "technology",
   keywords: [
     "SPOS Effects",
     "SPOS",
+    "SPOS Systems",
     "صولة للأنظمة",
+    "spos.ly",
     "CSS effects",
-    "CSS library",
-    "تأثيرات CSS",
+    "CSS effects library",
+    "pure CSS",
     "CSS animations",
     "hover effects",
-    "loaders",
-    "open source",
+    "CSS buttons",
+    "CSS loaders",
+    "open source CSS",
+    "تأثيرات CSS",
+    "مكتبة تأثيرات CSS",
+    "تأثيرات CSS جاهزة",
+    "شركة برمجيات ليبيا",
+    "تصميم مواقع ليبيا",
   ],
   authors: [{ name: "SPOS Systems (صولة للأنظمة)", url: "https://spos.ly" }],
-  icons: {
-    icon: "/favicon.svg",
+  creator: "SPOS Systems (صولة للأنظمة)",
+  publisher: "SPOS Systems (صولة للأنظمة)",
+  alternates: {
+    canonical: `${SITE_URL}/`,
   },
   openGraph: {
-    title: "SPOS Effects — Open-source CSS Effects Library",
-    description:
-      "30 hand-crafted pure-CSS effects with live demos and one-click copy. Zero JavaScript. من صولة للأنظمة.",
-    url: "https://spos.ly",
-    siteName: "SPOS Effects",
     type: "website",
+    url: `${SITE_URL}/`,
+    siteName: SITE_NAME,
+    title: TITLE,
+    description: DESCRIPTION,
+    locale: "en_US",
+    alternateLocale: ["ar_LY"],
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "SPOS Effects — 30 pure-CSS effects with live demos and one-click copy",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SPOS Effects — Open-source CSS Effects Library",
-    description:
-      "30 hand-crafted pure-CSS effects with live demos and one-click copy.",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [`${SITE_URL}/og-image.png`],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  other: {
+    "geo.region": "LY",
+    "geo.placename": "Tripoli, Libya",
+    ICBM: "32.8872, 13.1913",
+  },
+};
+
+/**
+ * Structured data (JSON-LD) for search engines:
+ * - Organization: SPOS Systems (صولة للأنظمة) — the business behind the library
+ * - WebSite: this demo site
+ * - SoftwareApplication: the SPOS Effects library itself
+ */
+const jsonLd: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://spos.ly/#organization",
+      name: "صولة للأنظمة",
+      alternateName: ["SPOS Systems", "SPOS"],
+      url: "https://spos.ly",
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` },
+      slogan: "حلول برمجية متكاملة — من الفكرة إلى الإطلاق",
+      description:
+        "شركة ليبية متخصصة في الحلول البرمجية المتكاملة — تصميم وتطوير المواقع والمتاجر الإلكترونية والأنظمة الإدارية والتطبيقات المخصصة، من الفكرة إلى الإطلاق.",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: "+218-93-553-5606",
+        url: "https://wa.me/218935535606",
+        availableLanguage: ["ar", "en"],
+        areaServed: "LY",
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "LY",
+        addressLocality: "طرابلس",
+      },
+      areaServed: [
+        { "@type": "Country", name: "Libya" },
+        { "@type": "City", name: "Tripoli" },
+      ],
+      sameAs: ["https://github.com/spos-systems", `${SITE_URL}/`],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: SITE_NAME,
+      description:
+        "Open-source CSS effects library — 30 hand-crafted pure-CSS effects with live demos and one-click copy. مكتبة تأثيرات CSS مفتوحة المصدر من صولة للأنظمة.",
+      inLanguage: ["en", "ar"],
+      publisher: { "@id": "https://spos.ly/#organization" },
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: SITE_NAME,
+      url: `${SITE_URL}/`,
+      applicationCategory: "DeveloperApplication",
+      applicationSubCategory: "CSS Effects Library",
+      operatingSystem: "Any",
+      programmingLanguage: "CSS",
+      softwareVersion: "1.0.0",
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      author: { "@id": "https://spos.ly/#organization" },
+      screenshot: `${SITE_URL}/og-image.png`,
+      description:
+        "30 hand-crafted, 100% dependency-free, pure-CSS effects — buttons, text, loaders, cards, backgrounds and inputs — with live demos and one-click copy.",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -59,6 +175,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <Toaster />
       </body>

@@ -31,6 +31,11 @@ import {
   type EffectCategoryId,
 } from "@/lib/effects";
 import { cn } from "@/lib/utils";
+import {
+  loadLibraryData,
+  toggleFavorite,
+  trackView,
+} from "@/lib/client-store";
 import { EffectCard } from "./effect-card";
 import { CodeDialog } from "./code-dialog";
 
@@ -75,25 +80,18 @@ export function EffectLibrary() {
   const [dialogEffect, setDialogEffect] = useState<CssEffect | null>(null);
   const { toast } = useToast();
 
-  // Load favorites + view stats from the backend
+  // Load favorites + view stats (API when available, localStorage otherwise —
+  // the latter keeps the static GitHub Pages build fully functional)
   useEffect(() => {
     let cancelled = false;
-    (async () => {
-      try {
-        const [favRes, statsRes] = await Promise.all([
-          fetch("/api/favorites"),
-          fetch("/api/stats"),
-        ]);
-        const favData = (await favRes.json()) as { favorites?: string[] };
-        const statsData = (await statsRes.json()) as { views?: Record<string, number> };
+    loadLibraryData()
+      .then((data) => {
         if (!cancelled) {
-          setFavorites(new Set(favData.favorites ?? []));
-          setViews(statsData.views ?? {});
+          setFavorites(data.favorites);
+          setViews(data.views);
         }
-      } catch (error) {
-        console.error("Failed to load library data:", error);
-      }
-    })();
+      })
+      .catch((error) => console.error("Failed to load library data:", error));
     return () => {
       cancelled = true;
     };
@@ -135,17 +133,12 @@ export function EffectLibrary() {
       description: wasFavorited ? undefined : "Find it anytime under Favorites.",
     });
     try {
-      const res = await fetch("/api/favorites", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ effectId }),
-      });
-      if (!res.ok) throw new Error("Request failed");
-      const data = (await res.json()) as { favorited: boolean };
-      // reconcile with server truth
+      const result = await toggleFavorite(effectId);
+      if (!result.ok) throw new Error("Request failed");
+      // reconcile with the store's source of truth (server or localStorage)
       setFavorites((prev) => {
         const next = new Set(prev);
-        if (data.favorited) next.add(effectId);
+        if (result.favorited) next.add(effectId);
         else next.delete(effectId);
         return next;
       });
@@ -169,11 +162,9 @@ export function EffectLibrary() {
     setDialogEffect(effect);
     // record a view
     setViews((prev) => ({ ...prev, [effect.id]: (prev[effect.id] ?? 0) + 1 }));
-    fetch("/api/stats", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ effectId: effect.id }),
-    }).catch((error) => console.error("Failed to record view:", error));
+    trackView(effect.id).catch((error) =>
+      console.error("Failed to record view:", error)
+    );
   };
 
   const handleCopy = async (text: string, label: string) => {
@@ -208,9 +199,9 @@ export function EffectLibrary() {
               <Zap className="size-5 text-white" aria-hidden />
             </span>
             <div className="leading-tight">
-              <p className="text-[1.05rem] font-bold tracking-tight">
+              <h1 className="text-[1.05rem] font-bold tracking-tight">
                 SPOS <span className="text-blue-400">Effects</span>
-              </p>
+              </h1>
               <p className="hidden text-[11px] text-zinc-500 sm:block">
                 Live CSS effects you can copy in one click
               </p>
@@ -465,6 +456,72 @@ export function EffectLibrary() {
           )}
         </main>
       </div>
+
+      {/* ============ SPOS promo CTA ============ */}
+      <section
+        aria-labelledby="spos-cta-title"
+        className="border-t border-zinc-800/70"
+      >
+        <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-gradient-to-l from-blue-600/15 via-zinc-900/60 to-zinc-900/60 p-6 sm:p-8">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -left-20 -top-24 size-56 rounded-full bg-blue-500/15 blur-3xl"
+            />
+            <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+              <div className="max-w-xl">
+                <Badge className="mb-3 bg-blue-400/15 text-[11px] font-medium text-blue-300 hover:bg-blue-400/15">
+                  <Sparkles className="mr-1 size-3" aria-hidden />
+                  تطوير · تصميم · حلول برمجية
+                </Badge>
+                <h2
+                  id="spos-cta-title"
+                  dir="rtl"
+                  className="text-lg font-bold leading-snug text-zinc-100 sm:text-xl"
+                >
+                  تحتاج موقعاً أو تطبيقاً احترافياً؟
+                </h2>
+                <p
+                  dir="rtl"
+                  className="mt-2 text-sm leading-relaxed text-zinc-400"
+                >
+                  صولة للأنظمة — حلول برمجية متكاملة من الفكرة إلى الإطلاق:
+                  مواقع، متاجر إلكترونية، أنظمة إدارية، وتطبيقات مخصصة.
+                </p>
+              </div>
+              <div className="flex shrink-0 flex-wrap gap-2.5">
+                <a
+                  href="https://wa.me/218935535606"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  dir="rtl"
+                  className="inline-flex items-center gap-2 rounded-full bg-blue-500 px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-blue-500/25 transition-colors hover:bg-blue-400"
+                >
+                  <MessageCircle className="size-4" aria-hidden />
+                  تواصل واتساب
+                </a>
+                <a
+                  href="https://spos.ly"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/70 px-4 py-2 text-xs font-semibold text-zinc-200 transition-colors hover:border-blue-400/50 hover:text-blue-300"
+                >
+                  <Globe className="size-4" aria-hidden />
+                  spos.ly
+                </a>
+                <a
+                  href="tel:0935535606"
+                  dir="rtl"
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/70 px-4 py-2 text-xs font-semibold text-zinc-200 transition-colors hover:border-blue-400/50 hover:text-blue-300"
+                >
+                  <Phone className="size-4" aria-hidden />
+                  اتصل الآن
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ============ Footer ============ */}
       <footer className="mt-auto border-t border-zinc-800/70 bg-zinc-950">

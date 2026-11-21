@@ -22,6 +22,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Code dialog with syntax highlighting for every effect.
 - Compiled all-in-one stylesheet `spos-effects.css` at the repository root, regenerated with `bun run build:css`.
 - CI workflow that lints the codebase and verifies that `spos-effects.css` is up to date.
+- GitHub Pages deployment workflow (`.github/workflows/deploy.yml`): the demo is built as a pure static export and published automatically on every push to `main`, with automatic `localStorage` persistence fallback for favorites and view counters (`src/lib/client-store.ts`) so every feature keeps working with zero backend.
+- Full SEO package: structured data (JSON-LD for Organization, WebSite, and SoftwareApplication), Open Graph and Twitter cards with a 1200×630 social image, canonical URL, sitemap, robots rules, and geographic targeting for Libya (`geo.region`, `geo.placename`).
 - Bilingual documentation (English and Arabic): README, CONTRIBUTING, SECURITY, issue templates, and pull request template.
 
 [1.0.0]: https://github.com/spos-systems/SPOS-Effects/releases/tag/v1.0.0

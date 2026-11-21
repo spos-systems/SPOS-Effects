@@ -15,6 +15,11 @@
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen" alt="PRs welcome"></a>
   <img src="https://img.shields.io/badge/Made_by-SPOS_Systems-blueviolet" alt="Made by SPOS Systems">
   <a href="https://spos.ly"><img src="https://img.shields.io/badge/Website-spos.ly-blue" alt="Website: spos.ly"></a>
+  <a href="https://spos-systems.github.io/SPOS-Effects/"><img src="https://img.shields.io/badge/Live_Demo-GitHub_Pages-0ea5e9?style=flat-square&logo=github" alt="Live Demo on GitHub Pages"></a>
+</p>
+
+<p align="center">
+  <strong>Try it live: <a href="https://spos-systems.github.io/SPOS-Effects/">spos-systems.github.io/SPOS-Effects</a> — no installation needed.</strong>
 </p>
 
 SPOS Effects is an open-source CSS effects library by [SPOS Systems](https://spos.ly). It ships 30 hand-crafted, 100% dependency-free, pure-CSS effects across six categories — buttons, text effects, loaders, cards, backgrounds, and inputs — each with a live interactive demo and copy-ready CSS/HTML code. The effects themselves require zero JavaScript: every class is prefixed with `fx-`, every snippet is fully self-contained, and everything works with any framework (or no framework at all).
@@ -81,7 +86,6 @@ Each effect's exact HTML markup is shown in its code dialog on the demo — open
 ### Option 2 — Run the demo site locally
 
 Requirements: [Bun](https://bun.sh) v1+ (recommended) or Node.js 18+.
-
 ```bash
 bun install          # install dependencies
 cp .env.example .env # create the local environment file
@@ -90,6 +94,12 @@ bun run dev          # start the dev server on port 3000
 ```
 
 Open http://localhost:3000. Favorites and view counters are persisted in SQLite through Prisma.
+
+### Option 3 — GitHub Pages (automatic deployment)
+
+The repository ships with a ready-made workflow ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) that builds the demo as a pure static export and publishes it to GitHub Pages on every push to `main`. On GitHub, enable it once under **Settings → Pages → Build and deployment → Source: GitHub Actions**, and your copy of the demo goes live at `https://<your-user>.github.io/SPOS-Effects/`.
+
+In the static build the API routes are stripped out and the demo automatically switches to `localStorage` persistence for favorites and view counters (see [`src/lib/client-store.ts`](src/lib/client-store.ts)) — every feature keeps working with zero backend.
 
 ### Available scripts
 
@@ -170,6 +180,8 @@ SPOS Effects مكتبة مفتوحة المصدر من صولة للأنظمة (
 | **حقول الإدخال** (4) | Underline Grow, Floating Label, Glow Focus, Expanding Search |
 
 ## البدء السريع
+
+جرّب المكتبة مباشرة بدون أي تثبيت: **[spos-systems.github.io/SPOS-Effects](https://spos-systems.github.io/SPOS-Effects/)**
 
 ### أولاً: استخدام المكتبة كاملة
 
